@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Paper Dashboard 2 - v2.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +9,8 @@ Coded by www.creative-tim.com
   <title>
     Paper Dashboard 2 by Creative Tim
   </title>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+    name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -32,6 +19,10 @@ Coded by www.creative-tim.com
   <link href="../assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/1f0779131f.js" crossorigin="anonymous"></script>
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="../assets/css/custom.css">
 </head>
 
 <body class="">
@@ -53,52 +44,46 @@ Coded by www.creative-tim.com
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li>
-            <a href="./dashboard.html">
+          <li class="active ">
+            <a href="./listarPedidos.html">
               <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
+              <p>Pedidos</p>
             </a>
           </li>
           <li>
-            <a href="./icons.html">
+            <a href="./registrarVenta.html">
               <i class="nc-icon nc-diamond"></i>
-              <p>Icons</p>
+              <p>Venta</p>
             </a>
           </li>
           <li>
-            <a href="./map.html">
+            <a href="./registrarCompra.html">
               <i class="nc-icon nc-pin-3"></i>
-              <p>Maps</p>
+              <p>Compra</p>
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
+            <a href="./aprobacionPaqueteRecibido.html">
               <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
+              <p>Recibir Pedido</p>
             </a>
           </li>
           <li>
-            <a href="./user.html">
+            <a href="./aprobacionCalidad.html">
               <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
+              <p>Aprobar Pedido</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
+            <a href="./pedidosIncompletos.html">
               <i class="nc-icon nc-tile-56"></i>
-              <p>Table List</p>
+              <p>Pedidos Pendientes</p>
             </a>
           </li>
           <li>
-            <a href="./typography.html">
+            <a href="./registrarProveedor.html">
               <i class="nc-icon nc-caps-small"></i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="active  active-pro " class="active-pro">
-            <a href="./upgrade.html">
-              <i class="nc-icon nc-spaceship"></i>
-              <p>Upgrade to PRO</p>
+              <p>Registrar Proveedor</p>
             </a>
           </li>
         </ul>
@@ -118,7 +103,8 @@ Coded by www.creative-tim.com
             </div>
             <a class="navbar-brand" href="javascript:;">Paper Dashboard 2</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+            aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -144,7 +130,8 @@ Coded by www.creative-tim.com
                 </a>
               </li>
               <li class="nav-item btn-rotate dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="nc-icon nc-bell-55"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Some Actions</span>
@@ -171,69 +158,57 @@ Coded by www.creative-tim.com
       <!-- End Navbar -->
       <div class="content">
         <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
-            <div class="card card-upgrade">
-              <div class="card-header text-center">
-                <h4 class="card-title">Paper Dashboard PRO</h3>
-                  <p class="card-category">Are you looking for more components? Please check our Premium Version of Paper Dashboard PRO.</p>
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">Pedidos</h4>
+                <div class="card-header-icons">
+                  <div class="col-md-3">
+                    <input type="text" class="form-control" name="pedido" id="buscar" placeholder="Cod Pedido">
+                  </div>
+                </div>
               </div>
               <div class="card-body">
-                <div class="table-responsive table-upgrade">
-                  <table class="table">
-                    <thead>
-                      <th></th>
-                      <th class="text-center">Free</th>
-                      <th class="text-center">PRO</th>
+                <div class="table-responsive">
+                  <table class="table tabla">
+                    <thead class=" text-primary">
+                      <th>
+                        Id pedido
+                      </th>
+                      <th>
+                        Fecha pedido
+                      </th>
+                      <th>
+                        Proveedor
+                      </th>
+                      <th>
+                        Información
+                      </th>
+                      <th>
+                        Reporte
+                      </th>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Components</td>
-                        <td class="text-center">16</td>
-                        <td class="text-center">160</td>
+                        <td>001</td>
+                        <td>05/04/2020</td>
+                        <td>001</td>
+                        <td><button><i class="fas fa-2x fa-eye fa-lg"></i></button></td>
+                        <td><button><i class="fas fa-2 fa-file-download fa-lg"></i></button></td>
                       </tr>
                       <tr>
-                        <td>Plugins</td>
-                        <td class="text-center">4</td>
-                        <td class="text-center">13</td>
+                        <td>002</td>
+                        <td>05/04/2020</td>
+                        <td>001</td>
+                        <td><button><i class="fas fa-2x fa-eye fa-lg"></i></button></td>
+                        <td><button><i class="fas fa-2 fa-file-download fa-lg"></i></button></td>
                       </tr>
                       <tr>
-                        <td>Example Pages</td>
-                        <td class="text-center">7</td>
-                        <td class="text-center">27</td>
-                      </tr>
-                      <tr>
-                        <td>Login, Register, Pricing, Lock Pages</td>
-                        <td class="text-center"><i class="nc-icon nc-simple-remove text-danger"></i></td>
-                        <td class="text-center"><i class="nc-icon nc-check-2 text-success"></i></td>
-                      </tr>
-                      <tr>
-                        <td>DataTables, VectorMap, SweetAlert, Wizard, jQueryValidation, FullCalendar etc...</td>
-                        <td class="text-center"><i class="nc-icon nc-simple-remove text-danger"></i></td>
-                        <td class="text-center"><i class="nc-icon nc-check-2 text-success"></i></td>
-                      </tr>
-                      <tr>
-                        <td>Mini Sidebar</td>
-                        <td class="text-center"><i class="nc-icon nc-simple-remove text-danger"></i></td>
-                        <td class="text-center"><i class="nc-icon nc-check-2 text-success"></i></td>
-                      </tr>
-                      <tr>
-                        <td>Premium Support</td>
-                        <td class="text-center"><i class="nc-icon nc-simple-remove text-danger"></i></td>
-                        <td class="text-center"><i class="nc-icon nc-check-2 text-success"></i></td>
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td class="text-center">Free</td>
-                        <td class="text-center">Just $39</td>
-                      </tr>
-                      <tr>
-                        <td class="text-center"></td>
-                        <td class="text-center">
-                          <a href="#" class="btn btn-round btn-default disabled">Current Version</a>
-                        </td>
-                        <td class="text-center">
-                          <a target="_blank" href="https://www.creative-tim.com/product/paper-dashboard-2-pro?ref=pd-free-upgrade-live" class="btn btn-round btn-primary">Upgrade to PRO</a>
-                        </td>
+                        <td>003</td>
+                        <td>06/04/2020</td>
+                        <td>002</td>
+                        <td><button><i class="fas fa-2x fa-eye fa-lg"></i></button></td>
+                        <td><button><i class="fas fa-2 fa-file-download fa-lg"></i></button></td>
                       </tr>
                     </tbody>
                   </table>
@@ -255,7 +230,8 @@ Coded by www.creative-tim.com
             </nav>
             <div class="credits ml-auto">
               <span class="copyright">
-                © <script>
+                ©
+                <script>
                   document.write(new Date().getFullYear())
                 </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
               </span>
@@ -277,8 +253,37 @@ Coded by www.creative-tim.com
   <!--  Notifications Plugin    -->
   <script src="../assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script><!-- Paper Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
+  <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+
+  <script>
+    document.querySelector("#buscar").onkeyup = function () {
+      $TableFilter(".tabla", this.value);
+    }
+
+    $TableFilter = function (id, value) {
+      var rows = document.querySelectorAll(id + ' tbody tr');
+
+      for (var i = 0; i < rows.length; i++) {
+        var showRow = false;
+
+        var row = rows[i];
+        row.style.display = 'none';
+
+        for (var x = 0; x < row.childElementCount; x++) {
+          if (row.children[x].textContent.toLowerCase().indexOf(value.toLowerCase().trim()) > -1) {
+            showRow = true;
+            break;
+          }
+        }
+
+        if (showRow) {
+          row.style.display = null;
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>

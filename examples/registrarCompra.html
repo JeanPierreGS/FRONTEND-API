@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +56,7 @@
               <p>Venta</p>
             </a>
           </li>
-          <li>
+          <li class="active ">
             <a href="./registrarCompra.html">
               <i class="nc-icon nc-pin-3"></i>
               <p>Compra</p>
@@ -69,7 +68,7 @@
               <p>Recibir Pedido</p>
             </a>
           </li>
-          <li class="active ">
+          <li>
             <a href="./aprobacionCalidad.html">
               <i class="nc-icon nc-single-02"></i>
               <p>Aprobar Pedido</p>
@@ -162,74 +161,104 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Aprobación calidad Pedido</h4>
-                <div class="card-header-icons">
-                  <div class="col-md-3">
-                    <input type="text" class="form-control" name="pedido" id="pedido" placeholder="Cod Pedido">
-                  </div>
-                  <div class="col-md-3">
-                    <!-- <label for="proveedor">Código del Proveedor: </label> -->
-                    <input type="text" class="form-control" name="proveedor id=" proveedor" readonly
-                      placeholder="Cod Proveedor">
-                  </div>
-                  <div class="col-md-3 mb-0">
-                    <button><i class="fas fa-2x fa-search fa-lg"></i></button>
-                  </div>
-                </div>
+                <h4 class="card-title">Registrar Venta</h4>
               </div>
               <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead class=" text-primary">
-                      <th>
-                        Id paquete
-                      </th>
-                      <th>
-                        Producto
-                      </th>
-                      <th>
-                        Marca
-                      </th>
-                      <th>
-                        Cantidad
-                      </th>
-                      <th>
-                        Medidad
-                      </th>
-                      <th>
-                        Aprobado
-                      </th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="text-center">123</td>
-                        <td>Cable Coaxial</td>
-                        <td>Cisco</td>
-                        <td>15</td>
-                        <td>metros</td>
-                        <td><input type="checkbox" class="form-control"></td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">124</td>
-                        <td>Canaleta</td>
-                        <td>Constructor</td>
-                        <td>20</td>
-                        <td>metros</td>
-                        <td><input type="checkbox" class="form-control"></td>
-                      </tr>
-                      <tr>
-                        <td class="text-center">125</td>
-                        <td>Switch</td>
-                        <td>Cisco</td>
-                        <td>2</td>
-                        <td>unidad</td>
-                        <td><input type="checkbox" class="form-control"></td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="form-group col-md-6">
+                        <label for="pedido">Código del pedido</label>
+                        <input class="form-control" type="text" id="pedido" name="pedido">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="proveedor">Proveedor</label>
+                        <select id="proveedor" class="form-control" name="proveedor">
+                          <option value="">001</option>
+                          <option value="">002</option>
+                          <option value="">003</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 mt-4">
+                    <div class="card-header-icons">
+                      <div class="col-md-3 pl-0">
+                        <input type="text" class="form-control" name="pedido" id="buscar" placeholder="Buscar Producto">
+                      </div>
+                    </div>
+                    <div class="table-responsive" style="height: 350px;">
+                      <table class="table tabla">
+                        <thead class=" text-primary">
+                          <th></th>
+                          <th>
+                            Id Producto
+                          </th>
+                          <th>
+                            Nombre
+                          </th>
+                          <th>
+                            Marca
+                          </th>
+                          <th>
+                            Modelo
+                          </th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><input type="checkbox" class="form-control"></td>
+                            <td>001</td>
+                            <td>Cable Coaxial</td>
+                            <td>Cisco</td>
+                            <td>C4</td>
+                          </tr>
+                          <tr>
+                            <td><input type="checkbox" class="form-control"></td>
+                            <td>002</td>
+                            <td>Mouse</td>
+                            <td>Logitech</td>
+                            <td>bg-57</td>
+                          </tr>
+                          <tr>
+                            <td><input type="checkbox" class="form-control"></td>
+                            <td>003</td>
+                            <td>Monitor</td>
+                            <td>Samsung</td>
+                            <td>49" curvo a51</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-md-12 mt-4">
+                    <div class="table-responsive">
+                      <table class="table tabla">
+                        <thead class=" text-primary">
+                          <th>
+                            Id Producto
+                          </th>
+                          <th>
+                            Nombre
+                          </th>
+                          <th>
+                            Modelo
+                          </th>
+                          <th>
+                            Cantidad
+                          </th>
+                          <th>
+                            Medida
+                          </th>
+                        </thead>
+                        <tbody id="seleccionados">
+
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </div>
                 <div class="row">
-                  <button class="btn btn-success mr-3 ml-auto">Guardar</button>
+                  <button class="btn btn-success mr-3 ml-auto">Registrar Pedido</button>
                 </div>
               </div>
             </div>
@@ -274,6 +303,82 @@
   <script src="../assets/js/paper-dashboard.min.js?v=2.0.1" type="text/javascript"></script>
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+
+  <script>
+
+    var tbody = document.querySelector('#seleccionados');
+
+
+    document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
+      checkbox.addEventListener('click', seleccionar);
+    });
+
+    function seleccionar() {
+      let filaProducto = this.parentNode.parentNode;
+      let datosProducto = filaProducto.children;
+      if (this.checked) {
+        let tr = document.createElement('TR');
+        crearFila(datosProducto[1].innerHTML, datosProducto[2].innerHTML, datosProducto[4].innerHTML, tr);
+        tbody.appendChild(tr);
+      } else {
+        eliminarfila(datosProducto[1].innerHTML);
+      }
+    }
+
+    function eliminarfila(id) {
+      var rows = document.querySelectorAll('#seleccionados tr');
+      for (var i = 0; i < rows.length; i++) {
+        var showRow = false;
+
+        var row = rows[i];
+
+        if (row.children[0].textContent.toLowerCase().indexOf(id.toLowerCase().trim()) > -1) {
+          showRow = true;
+        }
+
+        if (showRow) {
+          tbody.removeChild(row);
+          break;
+        }
+      }
+    }
+
+    function crearFila(id, nombre, modelo, tr) {
+      tr.innerHTML = `
+        <td>${id}</td>
+        <td>${nombre}</td>
+        <td>${modelo}</td>
+        <td><input class="form-control" type="double" required></td>
+        <td><input class="form-control" type="text" required></td>
+      `;
+    }
+
+    document.querySelector("#buscar").onkeyup = function () {
+      $TableFilter(".tabla", this.value);
+    }
+
+    $TableFilter = function (id, value) {
+      var rows = document.querySelectorAll(id + ' tbody tr');
+
+      for (var i = 0; i < rows.length; i++) {
+        var showRow = false;
+
+        var row = rows[i];
+        row.style.display = 'none';
+
+        for (var x = 0; x < row.childElementCount; x++) {
+          if (row.children[x].textContent.toLowerCase().indexOf(value.toLowerCase().trim()) > -1) {
+            showRow = true;
+            break;
+          }
+        }
+
+        if (showRow) {
+          row.style.display = null;
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>

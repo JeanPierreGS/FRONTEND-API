@@ -45,51 +45,45 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="./dashboard.html">
+            <a href="./listarPedidos.html">
               <i class="nc-icon nc-bank"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li>
-            <a href="./icons.html">
-              <i class="nc-icon nc-diamond"></i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li>
-            <a href="./map.html">
-              <i class="nc-icon nc-pin-3"></i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li>
-            <a href="./notifications.html">
-              <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li>
-            <a href="./user.html">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
+              <p>Pedidos</p>
             </a>
           </li>
           <li class="active ">
-            <a href="./tables.html">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Table List</p>
+            <a href="./registrarVenta.html">
+              <i class="nc-icon nc-diamond"></i>
+              <p>Venta</p>
             </a>
           </li>
           <li>
-            <a href="./typography.html">
-              <i class="nc-icon nc-caps-small"></i>
-              <p>Typography</p>
+            <a href="./registrarCompra.html">
+              <i class="nc-icon nc-pin-3"></i>
+              <p>Compra</p>
             </a>
           </li>
-          <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="nc-icon nc-spaceship"></i>
-              <p>Upgrade to PRO</p>
+          <li>
+            <a href="./aprobacionPaqueteRecibido.html">
+              <i class="nc-icon nc-bell-55"></i>
+              <p>Recibir Pedido</p>
+            </a>
+          </li>
+          <li>
+            <a href="./aprobacionCalidad.html">
+              <i class="nc-icon nc-single-02"></i>
+              <p>Aprobar Pedido</p>
+            </a>
+          </li>
+          <li>
+            <a href="./pedidosIncompletos.html">
+              <i class="nc-icon nc-tile-56"></i>
+              <p>Pedidos Pendientes</p>
+            </a>
+          </li>
+          <li>
+            <a href="./registrarProveedor.html">
+              <i class="nc-icon nc-caps-small"></i>
+              <p>Registrar Proveedor</p>
             </a>
           </li>
         </ul>
@@ -167,25 +161,51 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title">Registrar Compra</h4>
+                <h4 class="card-title">Registrar Venta</h4>
               </div>
               <div class="card-body">
                 <div class="row">
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <label for="pedido">Código del pedido</label>
-                      <input class="form-control" type="text" id="pedido" name="pedido">
-                    </div>
-                    <div class="form-group">
-                      <label for="proveedor">Proveedor</label>
-                      <select id="proveedor" class="form-control" name="proveedor">
-                        <option value="">001</option>
-                        <option value="">002</option>
-                        <option value="">003</option>
-                      </select>
-                    </div>
+                  <div class="form-group col-md-3">
+                    <label for="pedido">Código del pedido</label>
+                    <input class="form-control" type="text" id="pedido" name="pedido">
                   </div>
-                  <div class="col-md-10">
+                  <div class="form-group col-md-3">
+                    <label for="documento">Número Documento</label>
+                    <input type="number" class="form-control" id="documento" name="documento" required>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="tipo">Tipo documento</label>
+                    <select id="tipo" class="form-control" name="tipo">
+                      <option value="">Cédula</option>
+                      <option value="">Cédula extranjería</option>
+                      <option value="">NIT</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="ciudad">Ciudad</label>
+                    <select id="ciudad" class="form-control" name="ciudad">
+                      <option value="">Cúcuta</option>
+                      <option value="">Bucaramanga</option>
+                      <option value="">Bogotá</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" placeholder="" name="telefono" required>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" placeholder="" name="direccion" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="" name="nombre" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="text" class="form-control" id="correo" placeholder="" name="correo" required>
+                  </div>
+                  <div class="col-md-12 mt-4">
                     <div class="card-header-icons">
                       <div class="col-md-3 pl-0">
                         <input type="text" class="form-control" name="pedido" id="buscar" placeholder="Buscar Producto">
@@ -255,7 +275,7 @@
                           </th>
                         </thead>
                         <tbody id="seleccionados">
-                          
+
                         </tbody>
                       </table>
                     </div>
@@ -311,42 +331,77 @@
   <script>
 
     var tbody = document.querySelector('#seleccionados');
+
+
     document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
       checkbox.addEventListener('click', seleccionar);
     });
 
     function seleccionar() {
+      let filaProducto = this.parentNode.parentNode;
+      let datosProducto = filaProducto.children;
       if (this.checked) {
-        document.createElement('TR');
-        tbody.appendChild();
+        let tr = document.createElement('TR');
+        crearFila(datosProducto[1].innerHTML, datosProducto[2].innerHTML, datosProducto[4].innerHTML, tr);
+        tbody.appendChild(tr);
+      } else {
+        eliminarfila(datosProducto[1].innerHTML);
       }
     }
 
-    document.querySelector("#buscar").onkeyup = function() {
-            $TableFilter(".tabla", this.value);
+    function eliminarfila(id) {
+      var rows = document.querySelectorAll('#seleccionados tr');
+      for (var i = 0; i < rows.length; i++) {
+        var showRow = false;
+
+        var row = rows[i];
+
+        if (row.children[0].textContent.toLowerCase().indexOf(id.toLowerCase().trim()) > -1) {
+          showRow = true;
         }
 
-        $TableFilter = function(id, value) {
-            var rows = document.querySelectorAll(id + ' tbody tr');
-
-            for (var i = 0; i < rows.length; i++) {
-                var showRow = false;
-
-                var row = rows[i];
-                row.style.display = 'none';
-
-                for (var x = 0; x < row.childElementCount; x++) {
-                    if (row.children[x].textContent.toLowerCase().indexOf(value.toLowerCase().trim()) > -1) {
-                        showRow = true;
-                        break;
-                    }
-                }
-
-                if (showRow) {
-                    row.style.display = null;
-                }
-            }
+        if (showRow) {
+          tbody.removeChild(row);
+          break;
         }
+      }
+    }
+
+    function crearFila(id, nombre, modelo, tr) {
+      tr.innerHTML = `
+        <td>${id}</td>
+        <td>${nombre}</td>
+        <td>${modelo}</td>
+        <td><input class="form-control" type="double" required></td>
+        <td><input class="form-control" type="text" required></td>
+      `;
+    }
+
+    document.querySelector("#buscar").onkeyup = function () {
+      $TableFilter(".tabla", this.value);
+    }
+
+    $TableFilter = function (id, value) {
+      var rows = document.querySelectorAll(id + ' tbody tr');
+
+      for (var i = 0; i < rows.length; i++) {
+        var showRow = false;
+
+        var row = rows[i];
+        row.style.display = 'none';
+
+        for (var x = 0; x < row.childElementCount; x++) {
+          if (row.children[x].textContent.toLowerCase().indexOf(value.toLowerCase().trim()) > -1) {
+            showRow = true;
+            break;
+          }
+        }
+
+        if (showRow) {
+          row.style.display = null;
+        }
+      }
+    }
   </script>
 </body>
 
